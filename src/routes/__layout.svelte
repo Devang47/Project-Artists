@@ -1,10 +1,17 @@
 <script>
-	import '../styles/tailwind-output.css';
-	import Index from './index.svelte';
+  import { onMount } from "svelte";
 
-	
+  import "../styles/tailwind-output.css";
+  import "../styles/global.css";
+  import Index from "./index.svelte";
+
+  onMount(() => {
+    if (typeof window.ethereum !== "undefined") {
+      console.log("MetaMask is installed!");
+    } else {
+      console.log("not installed");
+    }
+  });
 </script>
 
-<!-- Try some classes here -->
-<h1 class="uppercase text-indigo-500">Hello People of Earth</h1>
 <slot />
