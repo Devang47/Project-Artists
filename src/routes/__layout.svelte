@@ -3,7 +3,6 @@
 
   import "../styles/tailwind-output.css";
   import "../styles/global.css";
-  import Index from "./index.svelte";
 
   onMount(() => {
     if (typeof window.ethereum !== "undefined") {

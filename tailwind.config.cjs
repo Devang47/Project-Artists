@@ -16,6 +16,8 @@ module.exports = {
       red: colors.rose,
       yellow: colors.amber,
       dark: "#023047",
+      light_dark: "#9DC2D5",
+      input_bg: "#153F53",
       accent: "#FB8500",
     },
   },
