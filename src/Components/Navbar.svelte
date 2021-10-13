@@ -10,5 +10,5 @@
       >Create post</button
     >
   </a>
-  <div class="ml-8"><a href="/" class="w-8 h-8 bg-accent rounded-full block shadow-md"> . </a></div>
+  <div class="ml-8"><a href="/profile" class="w-8 h-8 bg-accent rounded-full block shadow-md"> . </a></div>
 </nav>

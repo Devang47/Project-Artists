@@ -89,9 +89,9 @@
         {#each comments as item}
           <div class="bg-input_bg py-6 px-8 shadow rounded-md">
             <div class="text-base text-gray-300">{item.username}</div>
-            <div class="text-white mt-1.5">
+            <p class="text-white mt-1.5">
               {item.comment}
-            </div>
+            </p>
           </div>
         {/each}
       {:else}

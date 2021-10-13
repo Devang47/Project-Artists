@@ -19,6 +19,7 @@ module.exports = {
       light_dark: "#9DC2D5",
       input_bg: "#153F53",
       accent: "#FB8500",
+      banner: "#295E79",
     },
   },
   variants: {

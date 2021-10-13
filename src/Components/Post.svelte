@@ -1,4 +1,9 @@
+<script>
+  import { fade } from "svelte/transition";
+</script>
+
 <article
+  in:fade
   class="mx-auto flex-col gap-2 flex mt-5 w-11/12 max-w-md lg:max-w-3xl lg:mx-auto "
 >
   <div class="flex items-center justify-start">
@@ -8,7 +13,7 @@
     >
   </div>
   <div class="bg-white h-96 rounded" />
-  <div class="flex items-center justify-end gap-2 w-full">
+  <div class="flex items-center justify-end gap-3 w-full">
     <a href="#">
       <svg
         width="32"
