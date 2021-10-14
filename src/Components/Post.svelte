@@ -1,11 +1,11 @@
 <script>
   import { fade } from "svelte/transition";
+
+  export const details = [];
+  console.log(details);
 </script>
 
-<article
-  in:fade
-  class="mx-auto flex-col gap-2 flex mt-5 w-11/12 max-w-md lg:max-w-3xl lg:mx-auto "
->
+<article in:fade class="mx-auto flex-col gap-2 flex mt-5 w-11/12 max-w-md lg:max-w-3xl lg:mx-auto ">
   <div class="flex items-center justify-start">
     <span class="text-white mr-4 text-2xl font-medium"> Zakir khan </span>
     <button class="bg-accent py-0.5 px-2 text-sm font-medium rounded active:scale-95 duration-75"

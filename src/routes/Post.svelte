@@ -1,13 +1,6 @@
 <script context="module">
-  // /**
-  //  * @type {import('@sveltejs/kit').Load}
-  //  */
-  // let id
-  // export async function load({ page }) {
-  // 	id = page.params.id
-
-  //     const posts = .localStorage.getItem('posts')
-  // }
+  export const details = [];
+  console.log(details);
 
   import Navbar from "../Components/Navbar.svelte";
 
@@ -23,12 +16,14 @@
 <Navbar />
 <article class="mx-auto flex-col gap-2 flex mt-16 w-11/12 lg:mx-auto max-w-5xl">
   <div class="flex items-center justify-start">
-    <span class="text-white mr-4 text-3xl font-medium"> Zakir khan </span>
+    <span class="text-white mr-4 text-3xl font-medium"> {details.author} </span>
     <button class="bg-accent py-0.5 px-2 text-sm font-medium">Gift</button>
   </div>
-  <div class="bg-white h-96 rounded-md overflow-hidden" />
+  <div class="bg-white h-96 rounded-md overflow-hidden">
+    <img src={details.data} alt="" />
+  </div>
   <div class="flex items-center justify-end gap-2 w-full">
-    <a href="#">
+    <button>
       <svg
         width="32"
         height="27"
@@ -44,8 +39,8 @@
           stroke-linejoin="round"
         />
       </svg>
-    </a>
-    <a href="#">
+    </button>
+    <button>
       <svg
         width="28"
         height="28"
@@ -67,7 +62,7 @@
           stroke-linecap="round"
         />
       </svg>
-    </a>
+    </button>
   </div>
 
   <div class="my-10 mb-20">
