@@ -599,11 +599,11 @@ video {
 	position: -webkit-sticky;
 	position: sticky;
 }
-.top-0 {
-	top: 0px;
-}
 .bottom-0 {
 	bottom: 0px;
+}
+.top-0 {
+	top: 0px;
 }
 .mx-auto {
 	margin-left: auto;
@@ -700,14 +700,14 @@ video {
 .h-32 {
 	height: 8rem;
 }
+.w-full {
+	width: 100%;
+}
 .w-11\/12 {
 	width: 91.666667%;
 }
 .w-40 {
 	width: 10rem;
-}
-.w-full {
-	width: 100%;
 }
 .w-10\/12 {
 	width: 83.333333%;
@@ -774,9 +774,6 @@ video {
 }
 .gap-4 {
 	gap: 1rem;
-}
-.gap-10 {
-	gap: 2.5rem;
 }
 .overflow-hidden {
 	overflow: hidden;
@@ -929,10 +926,6 @@ video {
 .text-xl {
 	font-size: 1.25rem;
 	line-height: 1.75rem;
-}
-.text-base {
-	font-size: 1rem;
-	line-height: 1.5rem;
 }
 .font-semibold {
 	font-weight: 600;
