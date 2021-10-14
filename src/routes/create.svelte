@@ -6,11 +6,11 @@
 <Navbar />
 <div in:fade class="flex flex-col w-full h-full items-center justify-center my-auto mt-20 lg:mt-40">
   <div
-    class="flex flex-col items-center justify-center  border-dashed border-4 py-32 w-11/12 md:w-full max-w-xl mx-4 shadow-md border-input_bg"
+    class="flex flex-col items-center justify-center  border-dashed  border-4 py-32 w-11/12 md:w-full max-w-xl mx-4 shadow-md border-light_dark"
   >
     <label
       for="input"
-      class="bg-light_dark py-3 px-6 rounded-md font-semibold text-dark text-2xl duration-75 active:scale-95 hover:scale-105 shadow hover:shadow-lg flex gap-2 items-center"
+      class="bg-light_dark py-3.5 px-8 rounded-lg font-semibold text-dark text-2xl duration-75 active:scale-95 hover:scale-105 shadow hover:shadow-lg flex gap-2 items-center"
     >
       <svg
         width="31"
