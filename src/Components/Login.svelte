@@ -14,25 +14,23 @@
           const accounts = await ethereum.request({ method: "eth_requestAccounts" });
           const userAccount = accounts[0];
 
-          const newUsersData = [
-            ...$users,
-            {
-              id: Date.now(),
-              accountDetails: userAccount,
-              name: "Unknown",
-              artist_points: 100,
-              profile_pic: "",
-            },
-          ];
+          const newUser = {
+            id: Date.now(),
+            accountDetails: userAccount,
+            name: "Unknown",
+            artist_points: 100,
+            profile_pic: "",
+          };
 
-          account.set(newUsersData);
-          users.set(newUsersData);
+          account.set(newUser);
+          users.set([...$users, newUser]);
 
           localStorage.setItem("users", JSON.stringify(newUsersData));
 
           user.set(true);
         } catch (e) {
           error = "Error: " + e.message;
+          console.log(e);
         }
       };
     } else {
@@ -53,7 +51,7 @@
     </h2>
     <div class=" text-accent italic ">{error}</div>
     <button
-      class="bg-white rounded-md cursor-pointer duration-75 active:scale-95 hover:scale-105 py-2 px-4 mt-12 shadow hover:shadow-lg select-none"
+      class="bg-white rounded-md cursor-pointer duration-75 active:scale-95 hover:scale-105 py-2 px-4 mt-12 shadow hover:shadow-lg select-none mb-10"
       on:click={login}
     >
       <img
@@ -62,5 +60,15 @@
         alt="metamask logo"
       />
     </button>
+
+    or use a Existing account
+
+    <form on:submit|preventDefault={null}>
+      <input
+        type="text"
+        class=" rounded-md w-full bg-transparent outline-none text-white text-lg px-4 border-2 w-10/12 max-w-sm mt-4 mx-auto py-2 px-4"
+        placeholder="Enter a number between 1-10"
+      />
+    </form>
   </div>
 </section>

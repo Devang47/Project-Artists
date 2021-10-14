@@ -1,26 +1,60 @@
 <script context="module">
-  export const details = [];
-  console.log(details);
+  export async function load({ page }) {
+    let postId = page.params.id;
+    return { props: { id: postId } };
+  }
+</script>
 
-  import Navbar from "../Components/Navbar.svelte";
+<script>
+  import { onMount } from "svelte";
+  import { account, posts } from "../../state";
 
-  let comments = [
-    // {
-    //   username: "Unknown001",
-    //   comment:
-    //     "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum possimus pariatur ratione exercitationem velit aliquam alias molestias itaque. Delectus temporibus perspiciatis odio atque iure ratione illo consequatur ducimus reprehenderit similique?",
-    // },
-  ];
+  export let id;
+  import Navbar from "../../Components/Navbar.svelte";
+
+  let thisPost = {};
+  let commentInput = "";
+
+  onMount(() => {
+    posts.set(JSON.parse(localStorage.getItem("posts")) || []);
+    thisPost = $posts.find((e) => e.id == id);
+    console.log(thisPost, $posts);
+  });
+
+  const addComment = () => {
+    if (!commentInput) {
+      return;
+    }
+    const data = {
+      data: commentInput,
+      id: Date.now(),
+      username: $account.name || "Unknown",
+    };
+
+    thisPost.comments.push(data);
+
+    thisPost = thisPost;
+    commentInput = "";
+
+    console.log("posts: ", $posts);
+    const newPosts = [...$posts.filter((e) => e.id != id), thisPost];
+
+    localStorage.setItem("posts", JSON.stringify(newPosts));
+
+    console.log(thisPost, newPosts);
+  };
+
+  // $: console.log(thisPost);
 </script>
 
 <Navbar />
 <article class="mx-auto flex-col gap-2 flex mt-16 w-11/12 lg:mx-auto max-w-5xl">
   <div class="flex items-center justify-start">
-    <span class="text-white mr-4 text-3xl font-medium"> {details.author} </span>
+    <span class="text-white mr-4 text-3xl font-medium"> {thisPost.author} </span>
     <button class="bg-accent py-0.5 px-2 text-sm font-medium">Gift</button>
   </div>
   <div class="bg-white h-96 rounded-md overflow-hidden">
-    <img src={details.data} alt="" />
+    <img src={""} alt="" />
   </div>
   <div class="flex items-center justify-end gap-2 w-full">
     <button>
@@ -67,8 +101,12 @@
 
   <div class="my-10 mb-20">
     <div class="text-white text-xl font-semibold">Comments:</div>
-    <form class="mt-5 font-sans flex items-center justify-center bg-input_bg py-4 px-4 rounded-md">
+    <form
+      class="mt-5 font-sans flex items-center justify-center bg-input_bg py-4 px-4 rounded-md"
+      on:submit|preventDefault={addComment}
+    >
       <input
+        bind:value={commentInput}
         type="text"
         class=" rounded-md w-full bg-transparent outline-none text-white text-lg px-4"
         placeholder="Add a comment..."
@@ -79,13 +117,13 @@
       >
     </form>
 
-    <div class="mt-12 font-sans">
-      {#if comments.length}
-        {#each comments as item}
+    <div class="mt-12 font-sans flex flex-col gap-8">
+      {#if thisPost.comments}
+        {#each thisPost.comments as item}
           <div class="bg-input_bg py-6 px-8 shadow rounded-md">
-            <div class="text-base text-gray-300">{item.username}</div>
+            <div class="text-lg text-gray-300">{item.username}</div>
             <p class="text-white mt-1.5">
-              {item.comment}
+              {item.data}
             </p>
           </div>
         {/each}

@@ -15,7 +15,7 @@
   <section>
     <Navbar />
     <div class="grid grid-cols-1 w-full gap-8 py-10 mb-20">
-      {#each $posts as item}
+      {#each $posts as item (item.id)}
         <Post details={item} />
       {/each}
     </div>
