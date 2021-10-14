@@ -19,9 +19,11 @@
       >Gift</button
     >
   </div>
-  <div class="bg-white h-96 rounded">
-    <img src={details.data} alt="" />
-  </div>
+  <a href="/posts/1">
+    <div class="bg-white h-96 rounded">
+      <img src={details.data} alt="" />
+    </div></a
+  >
   <div class="flex items-center justify-end gap-3 w-full">
     <button on:click={handleLike}>
       {#if liked}
