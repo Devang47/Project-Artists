@@ -25,6 +25,7 @@
     if (!commentInput) {
       return;
     }
+
     const data = {
       data: commentInput,
       id: Date.now(),
@@ -35,16 +36,10 @@
 
     thisPost = thisPost;
     commentInput = "";
-
-    console.log("posts: ", $posts);
     const newPosts = [...$posts.filter((e) => e.id != id), thisPost];
 
     localStorage.setItem("posts", JSON.stringify(newPosts));
-
-    console.log(thisPost, newPosts);
   };
-
-  // $: console.log(thisPost);
 </script>
 
 <Navbar />

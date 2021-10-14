@@ -25,7 +25,7 @@
           account.set(newUser);
           users.set([...$users, newUser]);
 
-          localStorage.setItem("users", JSON.stringify(newUsersData));
+          localStorage.setItem("users", JSON.stringify($users));
 
           user.set(true);
         } catch (e) {

@@ -7,11 +7,9 @@
 
   $: console.log(details);
 
-
   const handleLike = () => {
-    
-  }
-
+    liked = !liked;
+  };
 </script>
 
 <article in:fade class="mx-auto flex-col gap-2 flex mt-5 w-11/12 max-w-md lg:max-w-3xl lg:mx-auto ">
@@ -28,8 +26,8 @@
     <button on:click={handleLike}>
       {#if liked}
         <svg
-          width="21"
-          height="19"
+          width="32"
+          height="27"
           viewBox="0 0 21 19"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
