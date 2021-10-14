@@ -4,9 +4,6 @@
   export let details;
 
   let liked = true;
-
-  $: console.log(details);
-
   const handleLike = () => {
     liked = !liked;
   };
@@ -19,7 +16,7 @@
       >Gift</button
     >
   </div>
-  <a href="/posts/1">
+  <a href={`/posts/${details.id}`}>
     <div class="bg-white h-96 rounded">
       <img src={details.data} alt="" />
     </div></a

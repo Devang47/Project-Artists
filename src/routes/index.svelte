@@ -8,7 +8,7 @@
   import Navbar from "../Components/Navbar.svelte";
   import Footer from "../Components/Footer.svelte";
 
-  const arr = new Array(10).fill(null);
+  const arr = new Array(2).fill(null);
 </script>
 
 {#if $user}

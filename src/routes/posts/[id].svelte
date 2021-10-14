@@ -16,7 +16,7 @@
   let commentInput = "";
 
   onMount(() => {
-    posts.set(JSON.parse(localStorage.getItem("posts")) || []);
+    // posts.set(JSON.parse(localStorage.getItem("posts")) || []);
     thisPost = $posts.find((e) => e.id == id);
     console.log(thisPost, $posts);
   });
